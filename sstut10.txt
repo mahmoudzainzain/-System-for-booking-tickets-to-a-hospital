@@ -1,0 +1,46 @@
+To find the inverse Laplace transform of X(s), we can use partial fraction decomposition. First, let's factorize the denominator:
+
+s^2 + 2s + 2 = (s + 1 + i)(s + 1 - i)
+
+Now, let's express X(s) in partial fraction form:
+
+X(s) = A/(s + 2) + (Bs + C)/(s^2 + 2s + 2)
+
+Multiplying both sides by (s + 2)(s^2 + 2s + 2), we get:
+
+X(s)((s + 2)(s^2 + 2s + 2)) = A(s^2 + 2s + 2) + (Bs + C)(s + 2)
+
+Expanding both sides:
+
+(3s^2 + 8s + 6) = A(s^2 + 2s + 2) + B(s^2 + 2s) + C(s + 2)
+
+Now, let's match the coefficients on both sides to determine the values of A, B, and C.
+
+Coefficients of s^2: 3 = A + B
+Coefficients of s: 8 = 2A + 2B + C
+Constant coefficients: 6 = 2A + 2C
+
+Solving these equations simultaneously, we find:
+
+A = 1/2
+B = 5/2
+C = 2
+
+Therefore, the partial fraction decomposition is:
+
+X(s) = (1/2)/(s + 2) + (5/2)s/(s^2 + 2s + 2) + 2/(s^2 + 2s + 2)
+
+Now, let's find the inverse Laplace transform of each term.
+
+Inverse Laplace transform of (1/2)/(s + 2):
+L^(-1){(1/2)/(s + 2)} = (1/2)e^(-2t)
+
+Inverse Laplace transform of (5/2)s/(s^2 + 2s + 2):
+L^(-1){(5/2)s/(s^2 + 2s + 2)} = (5/2)e^(-t)sin(t)
+
+Inverse Laplace transform of 2/(s^2 + 2s + 2):
+L^(-1){2/(s^2 + 2s + 2)} = e^(-t)cos(t)
+
+Therefore, the inverse Laplace transform of X(s) is:
+
+x(t) = (1/2)e^(-2t) + (5/2)e^(-t)sin(t) + 2e^(-t)cos(t)
